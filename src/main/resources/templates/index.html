@@ -1,0 +1,340 @@
+ <!DOCTYPE html>
+ <html lang="en"  xmlns:th="https://www.thymeleaf.com">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trip India</title> 
+    <link rel="icon" href="Images/travel-logo.png"> 
+    <link rel="stylesheet" href="" th:href="@{/Css/style.css}"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"   
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="  
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+ </head>
+ <body>  
+   <header> 
+      <div id="menu-bar"> <i class="fa-solid fa-bars"></i>
+      </div>
+      <a href="/" class="header__logo"> 
+         <img src="Images/travel-logo.png"  alt="travel-logo"> 
+         <p class="header__title">Trip<span>India</span></p>
+      </a>  
+      <nav class="navbar"> 
+         <div class="navbar__links"> 
+            <a href="#home">Home</a> 
+            <a href="#packages">Packages</a> 
+            <a href="#offers">Offers</a> 
+            <a href="#services">Services</a> 
+            <a href="#contacts">Contacts</a> 
+         </div>  
+      </nav>
+         <div class="header__icons">  
+            <i class="fa-solid fa-bell" id="notify-btn"></i> 
+            <i class="fa-solid fa-magnifying-glass" id="search-btn"></i> 
+            <i class="fa-regular fa-user" id="login-btn"></i>  
+         </div> 
+      <div class="notify-box-containar">  
+         <form action="" id="notify"> 
+               <table>  
+                  <h3>upcoming events</h3>  
+                  <thead> 
+                     <tr> 
+                        <th>Id</th>
+                        <th>Place</th>
+                        <th>Members</th>
+                        <th>Arrivals</th>
+                        <th>Leaving</th>  
+                        <th>price</th>
+                     </tr> 
+                  </thead> 
+                  <tbody> 
+                     <tr th:each="b:${book}"> 
+                        <td th:text="${b.id}"></td>
+                        <td th:text="${b.place}"></td>
+                        <td th:text="${b.members}"></td>
+                        <td th:text="${b.arrivals}"></td>
+                        <td th:text="${b.leaving}"></td>
+                        <td th:text="${b.price}"></td>
+                        <td><a href="" class="fa-solid fa-trash" th:href="@{/deleteMyList/{id}(id=${b.id})}"></a></th>
+                     </tr>
+                  </tbody>
+               </table> 
+         </form> 
+      </div>
+         <form action="" class="search-bar-containar"> 
+            <input type="search" id="search-bar" placeholder="Search here...."> 
+            <i class="fa-solid fa-magnifying-glass"></i> 
+         </form> 
+   </header>  
+   <div class="login-form-container"> 
+      <i class="fa-solid fa-xmark" id="form-close"> </i>  
+      <form action="" id="form"> 
+         <h3>LOGIN</h3>  
+         <div class="inputBox">
+           <input type="text" id="email" name="email" placeholder="enter your email"/>  
+           <div class="error"></div>  
+         </div>
+         <div class="inputBox">
+           <input type="password" id="password" name="password" placeholder="enter your password"/> 
+           <div class="error"></div>  
+         </div> 
+         <a href="#">Forgot password? </a>
+         <input type="submit" class=" btn" value="login now"/> 
+         <p>Don't Have An Account <a href="register">Register Now</a></p>
+      </form>
+   </div>
+   <section class="home__container" id="home"> 
+     <div class="home__content">  
+        <h1 class="home__title"> Discover<br><span> All </span><br>Destinations </h1>
+        <p class="home__text">  Discover New Places With Us and explore the India's most 
+            breathtaking destinations with our expert travel.From exotic beaches to cultural wonders,  
+            we've got you covered with our comprehensive travel guides and insider tips.
+        </p> 
+         <a href="Artical" class="btn">Read More</a>    
+     </div>  
+       
+   </section>  
+
+   <section class="packages__container" id="packages"> 
+      <h2 class="section__title">Start Your Journey...</h2>
+        <p class="section__subtitle">The most searched Places in Recent</p>
+      <div class="packages__parent">  
+         <div class="box"> 
+            <div class="box__img"> 
+               <img src="Images/Goa-1.jpg" alt=""> </div>
+               <div class="box__content"> 
+                  <h4 class="fas fa-map-marker-alt"><i> Goa</i></h4> 
+                  <p>Popularly known as India's party capital, 
+                     Goa seduces travellers from all around the globe  
+                     with its boho beaches, ancient churches, 
+                     majestic forts and unbeatable nightlife!</p> 
+                  <div class="reviews"> 
+                     <i class="fas fa-star"></i>  
+                     <i class="fas fa-star"></i> 
+                     <i class="fas fa-star"></i>  
+                     <i class="fas fa-star"></i> 
+                     <i class="fas fa-star"></i>   
+                     <span class="Days">(7 Days)</span>
+                  </div> 
+                  <div class="price"> ₹9,999 <span> 12,000</span></div>   
+                  <a href="book?selectedPlace=Goa" class="btn">Book Now</a>  
+               </div>
+             </div> 
+         <div class="box"> 
+            <div class="box__img"> 
+               <img src="Images/munnar-2.jpg" alt=""></div> 
+               <div class="box__content"> 
+                  <h4 class="fas fa-map-marker-alt"><i> MUNNAR</i></h4> 
+                  <p>The biggest tea-planation area in South India, Munnar is also home to several endangered species. 
+                     It is a spectacular stretch of silent mountains and swaying swathes of thick forests.</p> 
+                  <div class="reviews"> 
+                     <i class="fas fa-star"></i> 
+                     <i class="fas fa-star"></i> 
+                     <i class="fas fa-star"></i>  
+                     <i class="fas fa-star"></i> 
+                     <span class="fas fa-star"></span> 
+                     <span class="Days">(5 Days)</span>
+                  </div> 
+                  <div class="price"> 7,999 <span> ₹9,500</span></div> 
+                  <a href="book?selectedPlace=Munnar" class="btn">Book Now</a>
+            </div>
+         </div> 
+         <div class="box"> 
+            <div class="box__img"> 
+               <img src="Images/Ladakh-3.jpg" alt=""> </div>
+               <div class="box__content"> 
+                  <h4 class="fas fa-map-marker-alt"><i> LADAKH</i></h4> 
+                  <p>Located at a height of 11,500 feet, Leh finds place in the bucket list of many travel enthusiasts. 
+                     It will leave you in awe with its iconic monasteries and picturesque landscapes.</p> 
+                  <div class="reviews"> 
+                     <i class="fas fa-star"></i> 
+                     <i class="fas fa-star"></i>  
+                     <i class="fas fa-star"></i>  
+                     <i class="fas fa-star"></i> 
+                     <i class="fa-solid fa-star-half-stroke"></i> 
+                     <span class="Days">(10 Days)</span>
+                  </div> 
+                  <div class="price"> ₹22,999 <span> ₹25,000</span></div> 
+                  <a href="book?selectedPlace=Ladakh" class="btn">Book Now</a>
+             </div>
+          </div> 
+         <div class="box"> 
+            <div class="box__img"> 
+               <img src="Images/Jaipur-4.jpg" alt=""> </div>
+               <div class="box__content"> 
+                  <h4 class="fas fa-map-marker-alt"><i> JAIPUR</i></h4> 
+                  <p>Fondly known as the Pink City for its trademark building color and now declared as a UNESCO World Heritage Site, Jaipurs historic forts,  
+                     majestic palaces and ancient temples make it a perfect royal getaway in the heart of Aravallis.</p> 
+                  <div class="reviews"> 
+                     <i class="fas fa-star"></i> 
+                     <i class="fas fa-star"></i> 
+                     <i class="fas fa-star"></i>  
+                     <i class="fas fa-star"></i> 
+                     <span class="fas fa-star"></span> 
+                     <span class="Days">(8 Days)</span>
+                  </div> 
+                  <div class="price"> ₹17,999 <span> ₹20,000</span></div> 
+                  <a href="book?selectedPlace=Jaipur" class="btn">Book Now</a>
+               </div>
+         </div> 
+         <div class="box"> 
+            <div class="box__img"> 
+               <img src="Images/Amritsar-5.jpg" alt=""></div>
+               <div class="box__content"> 
+                  <h4 class="fas fa-map-marker-alt"><i> AMRITSAR</i></h4> 
+                  <p>Home to the legendary Sikh shrine Golden Temple, Amritsar is fondly called Ambarsar and will steal your heart with its colourful 
+                     bazaars, lip-smacking street food, shopping hubs and historical monuments.</p> 
+                  <div class="reviews"> 
+                     <i class="fas fa-star"></i> 
+                     <i class="fas fa-star"></i> 
+                     <i class="fas fa-star"></i>  
+                     <i class="fas fa-star"></i> 
+                     <i class="fa-solid fa-star-half-stroke"></i>  
+                     <span class="Days">(9 Days)</span>
+                  </div> 
+                  <div class="price"> ₹13,999 <span> ₹15,500</span></div> 
+                  <a href="book?selectedPlace=Amritsar" class="btn">Book Now</a>
+               </div>
+            </div>
+         <div class="box"> 
+            <div class="box__img"> 
+               <img src="Images/Ooty-6.jpg" alt=""></div>
+               <div class="box__content"> 
+                  <h4 class="fas fa-map-marker-alt"><i> OOTY</i></h4> 
+                  <p>Officially called Ootacamund, the hill-town is better known by its nickname Ooty. It is loved by Bollywood directors, 
+                     honeymooners, families, and even backpackers, for its mountains, lakes, gardens, and waterfalls.</p> 
+                  <div class="reviews"> 
+                     <i class="fas fa-star"></i> 
+                     <i class="fas fa-star"></i> 
+                     <i class="fas fa-star"></i>  
+                     <i class="fas fa-star"></i> 
+                     <i class="fas fa-star"></i>  
+                     <span class="Days">(6 Days)</span>
+                  </div> 
+                  <div class="price"> ₹10,999 <span> ₹12,500</span></div> 
+                  <a href="book?selectedPlace=Ooty" class="btn">Book Now</a>
+               </div>
+            </div>
+       </div>
+      </section>   
+      <section id="offers">
+           <div class="offers__content">
+             <h1>Discount <span>10-30%</span> Off</h1>
+             <p>
+               Travel the world on a budget with our unbeatable discounted travel
+               deals. Whether you're looking for a last-minute escape or planning
+               ahead, we've got you covered with incredible discounts on flights,
+               hotels, and packages. Don't wait, book now and experience the
+               adventure of a lifetime without breaking the bank.
+             </p>
+             <h2>Explore our exciting offers:</h2> 
+             <div class="offers__grid"> 
+               <div class="offers__card">
+                  <div class="offers__inner"> 
+                     <div class="card__front">
+                     <img src="Images/Off-2.jpg" alt="">
+                     <h4>Weekend Getaway- Save 10%!</h4> 
+                     </div> 
+                     <div class="card__back">
+                     <p>Looking for the perfect way to unwind and recharge? Look no further! Our exclusive 
+                         weekend getaway package is designed to offer you a memorable break from the everyday 
+                          hustle and bustle. And guess what? We're sweetening the deal with a fantastic 10% discount!</p> 
+                      <h3>WEEK10A</h3>
+                    </div>  
+                  </div> 
+               </div> 
+               <div class="offers__card"> 
+                  <div class="offers__inner">  
+                    <div class="card__front">
+                       <img src="Images/Off-1.jpg" alt="">
+                       <h4>Group Bookings- Save 20%!</h4>  
+                    </div> 
+                    <div class="card__back">
+                       <p>Gather your friends and family for an unforgettable experience! 
+                         With our special discount offer, enjoy a fantastic 20% off your total bill 
+                          when you book for a group of four or more people. 
+                         Make your event truly memorable with great savings and even greater company!</p>   
+                       <h3>GROUP20B</h3>
+                    </div> 
+                  </div> 
+               </div>     
+               <div class="offers__card">
+                  <div class="offers__inner"> 
+                     <div class="card__front">
+                       <img src="Images/Off-3.jpg" alt="">
+                       <h4>Birthday Special- Save 30%!</h4> 
+                     </div> 
+                     <div class="card__back">
+                       <p>Celebrate your special day with friends and family!  
+                        Book a group reservation for a birthday celebration and receive a 30% discount
+                        on our premium accommodations, creating the perfect backdrop for your special day. 
+                        Let us help make your birthday unforgettable.</p>  
+                       <h3>BIRTH30C</h3>
+                    </div>  
+                  </div> 
+               </div>
+           </div>    
+         </div>
+      </section>
+       
+      <section id="services">
+           <h2 class="section__title">Why Choose Us...</h2>
+           <p class="section__subtitle">
+             The gladdest moment in human life, is a departure into unknown lands.
+           </p>
+           <div class="display__grid"> 
+             <div class="display__card">
+               <i class="fa-solid fa-mountain-sun"></i>
+               <h4>Passionate Travel</h4>
+               <p>Fuel your passion for adventure and discover new horizons</p> 
+            </div>
+               <div class="display__card">
+                  <i class="fa-solid fa-map-location-dot"></i>
+                  <h4>Beautiful Places</h4>
+                  <p>Uncover the world's most breathtakingly beautiful places</p>
+                </div> 
+                <div class="display__card">
+                  <i class="fa-solid fa-camera"></i>
+                  <h4>Capture Moments</h4>
+                  <p>Preserve memories with stunning photographs from your journeys</p>
+              </div>
+              <div class="display__card">
+                  <i class="fa-solid fa-suitcase"></i>
+                  <h4>Travel Essentials</h4>
+                  <p>Discover must-have items for a smooth and enjoyable travel experience</p>
+              </div>
+            </div>
+       </section>  
+      <section id="contacts">
+        <footer >  
+          <div class="box__container">
+            <div class="media__icons">  
+                  <h3>Follow us</h3>
+                  <a href="" class="fa-brands fa-square-facebook"></a>
+                  <a href="" class="fa-brands fa-square-twitter"></a> 
+                  <a href="" class="fa-brands fa-square-instagram"></a>   
+            </div>  
+            <div class="box"> 
+               <h3>Extra links</h3>
+               <a href="#"><i class="fas fa-angle-right"></i> ask questions</a> 
+               <a href="#"><i class="fas fa-angle-right"></i> about us</a> 
+               <a href="#"><i class="fas fa-angle-right"></i> privacy policy</a> 
+               <a href="#"><i class="fas fa-angle-right"></i> terms of use</a> 
+            </div> 
+            <div class="box"> 
+               <h3>Contacts</h3>
+               <a href="#"><i class="fas fa-phone"></i> +125-676-0875</a> 
+               <a href="#"><i class="fas fa-phone"></i> +111-282-3636</a> 
+               <a href="#"><i class="fas fa-envelope"></i> mmurali8584@gmail.com</a> 
+               <a href="#"><i class="fas fa-map"></i> chennai,india-623578</a> 
+            </div>
+              
+           </div>
+            <div class="credit">
+             <p>"Travel makes one modest. You see what a tiny place you occupy in the world" </p> 
+             <h6>© 2023 TRIPINDIA PVT. LTD.</h6> 
+            </div>
+        </footer>  
+     </section>
+    <script src="" th:src="@{/Js/main.js}"> </script>
+ </body>
+ </html> 

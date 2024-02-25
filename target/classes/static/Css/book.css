@@ -1,0 +1,218 @@
+html { 
+    box-sizing: border-box; 
+    font-size: 100%; 
+    scroll-behavior: smooth; 
+    overflow-x: hidden;
+}  
+
+*,*::before, 
+*::after { 
+    box-sizing: inherit; 
+    padding: 0; 
+    margin: 0; 
+}
+
+:root {  
+--blue-color:#3b71fe;  
+--hover-blue: rgba(59,114,254,0.8);
+--white-color: white; 
+--black-color: black; 
+--dark-gray: #767268;
+
+--main-transition: 0.2s ease-in-out;
+}    
+ 
+section {
+    padding: 0rem 5% 5rem;
+    margin: auto;    
+} 
+ 
+.header__logo {  
+    display: flex; 
+    align-items: center; 
+    justify-content: flex-start; 
+    text-decoration: none; 
+    padding: 1rem;  
+} 
+ 
+header img { 
+    width: 50px; 
+    margin-right: 0.5rem; 
+}  
+ 
+.header__title {  
+    font-size: 2rem; 
+    font-weight: bold; 
+    color: var(--blue-color);
+}  
+ 
+.header__title span{ 
+    color: var(--dark-gray);
+} 
+
+#book .row { 
+     display: flex; 
+     align-items: center; 
+     margin-top: 3rem; 
+}    
+
+.row div { 
+     flex: 50%; 
+     width: 100%;
+} 
+
+.heading{ 
+   text-align: center; 
+}
+
+.heading span {   
+   font-size: 3rem; 
+   text-transform: uppercase; 
+   background-color: var(--hover-blue); 
+   color: var(--white-color); 
+   padding: 0.5rem 1rem; 
+   border-radius: 0.5rem;
+} 
+
+.heading span.space { 
+   background: none;
+} 
+
+.book__img img { 
+   display: block; 
+   max-width: 80%;    
+   margin-left: 6rem; 
+   border-radius: 1rem;
+}
+
+.book__form {  
+   padding: 1rem;   
+   border-radius: 0.3rem;  
+   width: 50%;
+} 
+
+.row h3 { 
+   color: #666; 
+   margin-bottom: 0.6rem;
+} 
+
+.book__form .inputBox input ,select { 
+   width: 75%;  
+   font-family:Verdana;  
+   font-style: italic;
+   padding: 0.8rem;  
+   border: 1px solid #c8c8c8; 
+   border-radius: 0.5rem; 
+   outline: none; 
+   color: #333; 
+   margin-bottom: 1rem;
+}   
+
+.book__form .inputBox input:hover { 
+   border:1px solid #000;
+}
+ 
+select:hover{ 
+    border:1px solid #000;
+}  
+ 
+
+
+.book__form .btn {  
+   width: fit-content;
+   background-color: var(--blue-color); 
+   color: white; 
+   padding: 0.5rem 1.5rem;
+   margin-top: 1rem; 
+   margin-bottom: 1rem; 
+   font-size: 1.3rem; 
+   outline: none; 
+   border: 0.1rem solid; 
+   border-radius: 0.3rem; 
+   cursor: pointer; 
+   transition: all var(--main-transition);
+}
+
+.book__form .btn:hover { 
+    background-color: var(--hover-blue); 
+} 
+ 
+
+#Price {  
+    color: var(--blue-color);  
+    font-size: 1.3rem;   
+}   
+ 
+
+#discountPrice {  
+    font-size: 1.4rem; 
+    color: #e74c3c;
+    margin-left: 10px;  
+
+}  
+ 
+.inputBox.success input{
+    border-color: #0cc477;
+   }
+
+.inputBox.error input{
+    border-color:rgb(206, 67, 67);
+   }
+
+@media (max-width: 1199px) {  
+     
+    section { 
+        padding: 2rem 5%;
+    }
+
+    .book__img img { 
+        display: block; 
+        max-width: 100%;  
+        margin-left: 0px; 
+     } 
+     .book__form .inputBox input,select { 
+        width: 100%; 
+    }  
+} 
+ 
+@media (max-width:767px){  
+
+    #book .row { 
+        flex-direction: column;
+    } 
+    .book__img img { 
+        display: block; 
+        max-width: 100%;  
+        margin-left: 0;  
+     }  
+     .book__form .inputBox input,select { 
+        width: 100%;  
+    }
+} 
+ 
+@media (max-width:600px){   
+     
+    html{ 
+        font-size: 73%;
+    } 
+
+    .book__img img { 
+        display: block; 
+        max-width: 100%;  
+        margin-left: 0;  
+     }   
+     .book__form .inputBox input,select { 
+        width: 100%;  
+     } 
+     .heading span { 
+        font-size: 1.5rem;
+    } 
+}  
+ 
+@media (max-width:400px){ 
+     .heading span { 
+        font-size: 1.4rem; 
+        line-height: 35px;
+    }   
+ }
+ 

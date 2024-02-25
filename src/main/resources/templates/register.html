@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="https://www.thymeleaf.com">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trip India/Register</title>   
+    <link rel="icon" href="Images/travel-logo.png"> 
+    <link rel="stylesheet" href="" th:href="@{/Css/register.css}">
+</head>
+<body> 
+    <header> 
+        <a href="/" class="header__logo"> 
+           <img src="Images/travel-logo.png" alt="travel-logo"> 
+           <p class="header__title">Trip<span>India</span></p>
+        </a> 
+    </header>
+    <div class="container">
+        <form action="" id="form">
+            <h1>Register</h1>
+            <div class="inputBox">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="e.g john_doe5">
+                <div class="error"></div>
+            </div>
+            <div class="inputBox">
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email" placeholder="e.g yourname@gmail.com" >
+                <div class="error"></div>
+            </div>
+            <div class="inputBox">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="e.g password123#">
+                <div class="error"></div>
+            </div>
+            <div class="inputBox">
+                <label for="cpassword">Confirm Password</label>
+                <input type="password" id="cpassword" name="cpassword" placeholder="e.g password123#">
+                <div class="error"></div>
+            </div>
+            <button type="submit">Register</button>
+        </form>
+    </div> 
+ <script src="" th:src="@{/Js/register.js}"></script>
+</body>
+</html>

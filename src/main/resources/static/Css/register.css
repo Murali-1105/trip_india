@@ -1,0 +1,118 @@
+:root {  
+    --blue-color:#3b71fe;  
+    --hover-blue: rgba(59,114,254,0.8); 
+    --white-color: white; 
+    --black-color: black; 
+    --dark-gray: #767268;  
+    
+    --main-transition: 0.2s ease-in-out;  
+}  
+  
+body{ 
+    background: #333;
+    background-image: linear-gradient(
+        rgba(101, 174, 238, 0.192),
+        rgba(45, 91, 132, 0.342)),url(@{/Images/register.jpg});
+    background-size: cover;   
+    background-position: center;
+    margin:0;
+    font-family: 'Poppins', sans-serif;  
+    min-height: 100vh;
+    width: 100%;
+    }
+ 
+  .header__logo {  
+      display: flex;  
+      flex-direction: row;
+      align-items:center; 
+      justify-content: center; 
+      text-decoration: none;  
+      margin-right: 1.5rem;    
+  } 
+   
+  header img { 
+      width: 50px; 
+      margin-right: 0.5rem; 
+  }  
+   
+  .header__title {  
+      font-size: 2rem; 
+      font-weight: bold; 
+      color: var(--blue-color);
+  }  
+   
+  .header__title span{ 
+      color: var(--dark-gray);
+  }   
+   
+  .container{ 
+    display: flex;    
+    justify-content: center; 
+    padding: 0 5% 5rem;
+  }
+
+  #form{ 
+    position: relative;  
+    background-color: white; 
+    width: 25rem; 
+    border-radius: 0.3rem; 
+    padding: 2rem;
+   }
+
+  h1{
+    color: #606060; 
+    font-size: 2rem; 
+    text-align: center; 
+    margin-bottom: 0.3rem; 
+  } 
+
+  .inputBox{
+    display:flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+  }
+
+  .inputBox input{ 
+    margin-top:5px;     
+    padding: 0.7rem;   
+    outline: 0; 
+    border: 1px solid rgba(0,0,0,0.3);
+    border-radius: 0.3rem; 
+  } 
+   
+  ::placeholder {
+    color: #999; 
+    font-style: italic;
+    font-size: 14px;
+  } 
+   
+  .inputBox .error{
+    color:rgb(242, 18, 18);
+    font-size:0.8rem;
+    margin-top: 5px;
+   }
+
+   .inputBox.success input{
+    border-color: #0cc477;
+   }
+
+   .inputBox.error input{
+    border-color:rgb(206, 67, 67);
+   } 
+    
+   #form button{ 
+    background-color: var(--blue-color); 
+    width: 100%; 
+    padding: 0.7rem; 
+    border:1px solid;
+    color:white;
+    border-radius: 0.3rem;
+    margin:10px 0px 20px;    
+    cursor:pointer;
+    font-size:1.3rem;  
+    transition: all var(--main-transition);
+  } 
+   
+  #form button:hover{ 
+    background-color: var(--hover-blue);
+  } 
